@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -18,10 +17,10 @@ function Header() {
 		<div className="container">
 			<nav>
 				<ul style={{display:'flex', justifyContent: 'flex-end', listStyleType:'none'}}>
-					<li style={{marginRight:'15px'}}><a href='#' style={{cursor:'pointer'}}>Home</a></li>
-					<li style={{marginRight:'15px'}}><a href='#' style={{cursor:'pointer'}}>Projects</a></li>
-					<li style={{marginRight:'15px'}}><a href='#' style={{cursor:'pointer'}}>Contacts</a></li>
-					<li style={{marginRight:'15px'}}><a href='#' style={{cursor:'pointer'}}>About</a></li>					
+					<li style={{marginRight:'15px'}}><a href='https://www.google.com/' style={{cursor:'pointer'}}>Home</a></li>
+					<li style={{marginRight:'15px'}}><a href='https://www.google.com/' style={{cursor:'pointer'}}>Projects</a></li>
+					<li style={{marginRight:'15px'}}><a href='https://www.google.com/' style={{cursor:'pointer'}}>Contacts</a></li>
+					<li style={{marginRight:'15px'}}><a href='https://www.google.com/' style={{cursor:'pointer'}}>About</a></li>					
 				</ul>
 			</nav>
 		</div>

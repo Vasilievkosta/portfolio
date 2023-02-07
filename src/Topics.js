@@ -9,6 +9,12 @@ function Topics() {
             .then((response) => response.json())
             .then(json => setPlanets(json))
     }, [])
+	
+	React.useEffect(() => {
+        fetch('https://railway-first.up.railway.app/api/users')
+            .then((response) => response.json())
+            .then(json => console.log(json))
+    }, [])
 
     let arr = planets.results;
 

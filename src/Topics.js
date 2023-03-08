@@ -3,6 +3,7 @@ import './App.css';
 
 function Topics() {
     const [planets, setPlanets] = React.useState({});
+	const [pizza, setPizza] = React.useState([]);
 
     React.useEffect(() => {
         fetch('https://swapi.dev/api/planets')
@@ -10,17 +11,13 @@ function Topics() {
             .then(json => setPlanets(json))
     }, [])
 	
-	// React.useEffect(() => {
-        // fetch('https://railway-first.up.railway.app/api/master')
-            // .then((response) => response.json())
-            // .then(json => console.log(json))
-    // }, [])
+	React.useEffect(() => {
+        fetch('https://631b6309fae3df4dcffd7df6.mockapi.io/api/items')
+            .then((response) => response.json())
+            .then(json => setPizza(json))
+    }, [])
 	
-	// React.useEffect(() => {
-        // fetch('https://railway-first.up.railway.app/api/city')
-            // .then((response) => response.json())
-            // .then(json => console.log(json))
-    // }, [])
+	
 
     let arr = planets.results;
 
@@ -48,6 +45,15 @@ function Topics() {
                     ))}
                 </tbody>
             </table>
+			<ul style={{display: 'flex', flexWrap: 'wrap', listStyleType: 'none', padding: '20px 100px'}}>
+				{pizza.map((p,i)=> (
+					<li key={i} style={{width: '200px', height: '200px'}}>
+						<img src={p.imageUrl} alt='pizzaImage'/>
+					</li>
+				))}
+			</ul>
+			
+			
 
         </div>
     );

@@ -7,7 +7,7 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
-		{/*<HeaderContainer />*/}
+		<HeaderContainer />
 			<AppRouter />
 		</BrowserRouter>
 	);

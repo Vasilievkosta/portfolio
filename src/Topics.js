@@ -10,17 +10,17 @@ function Topics() {
             .then(json => setPlanets(json))
     }, [])
 	
-	React.useEffect(() => {
-        fetch('https://railway-first.up.railway.app/api/master')
-            .then((response) => response.json())
-            .then(json => console.log(json))
-    }, [])
+	// React.useEffect(() => {
+        // fetch('https://railway-first.up.railway.app/api/master')
+            // .then((response) => response.json())
+            // .then(json => console.log(json))
+    // }, [])
 	
-	React.useEffect(() => {
-        fetch('https://railway-first.up.railway.app/api/city')
-            .then((response) => response.json())
-            .then(json => console.log(json))
-    }, [])
+	// React.useEffect(() => {
+        // fetch('https://railway-first.up.railway.app/api/city')
+            // .then((response) => response.json())
+            // .then(json => console.log(json))
+    // }, [])
 
     let arr = planets.results;
 

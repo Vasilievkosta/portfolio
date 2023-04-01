@@ -1,13 +1,12 @@
-import React, { useCallback, useReducer } from 'react';
+import React, { useCallback } from 'react';
 import './App.css';
 import { TaskType, Todolist } from './Todolist';
-import { v1 } from 'uuid';
 import { AddItemForm } from './AddItemForm';
 import {
-    todolistsReducer, removeTodolistAC, addTodolistAC, changeTodolistTitleAC,
+     removeTodolistAC, addTodolistAC, changeTodolistTitleAC,
     changeTodolistFilterAC
 } from './state/todolists-reducer';
-import { tasksReducer, removeTaskAC, addTaskAC, changeTaskStatusAC, changeTaskTitleAC } from './state/tasks-reducer';
+import { removeTaskAC, addTaskAC, changeTaskStatusAC, changeTaskTitleAC } from './state/tasks-reducer';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { AppRootState } from './state/store';

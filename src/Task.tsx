@@ -2,7 +2,6 @@ import React, { ChangeEvent, useCallback } from 'react';
 import { TaskType } from './Todolist';
 import { EditableSpan } from 'EditableSpan';
 import Checkbox from '@mui/material/Checkbox';
-import iconClose from './close.svg'
 
 type TaskPropsType = {
     task: TaskType

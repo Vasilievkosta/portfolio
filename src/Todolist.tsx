@@ -42,28 +42,28 @@ export const Todolist = React.memo((props: PropsType) => {
 
     const addTask = useCallback((title: string) => {
         props.addTask(title, props.id)
-    }, [props.addTask, props.id])
+    }, [props])
 
     const removeTodolist = () => {
         props.removeTodolist(props.id);
     }
     const changeTodolistTitle = useCallback((title: string) => {
         props.changeTodolistTitle(props.id, title);
-    }, [props.changeTodolistTitle, props.id])
+    }, [props])
 
-    const onAllClickHandler = useCallback(() => props.changeFilter("all", props.id), [props.changeFilter, props.id]);
-    const onActiveClickHandler = useCallback(() => props.changeFilter("active", props.id), [props.changeFilter, props.id]);
-    const onCompletedClickHandler = useCallback(() => props.changeFilter("completed", props.id), [props.changeFilter, props.id]);
+    const onAllClickHandler = useCallback(() => props.changeFilter("all", props.id), [props]);
+    const onActiveClickHandler = useCallback(() => props.changeFilter("active", props.id), [props]);
+    const onCompletedClickHandler = useCallback(() => props.changeFilter("completed", props.id), [props]);
 
-    const removeTask = useCallback((taskId: string) => props.removeTask(taskId, props.id), [props.removeTask, props.id]);
+    const removeTask = useCallback((taskId: string) => props.removeTask(taskId, props.id), [props]);
 
     const changeTaskStatus = useCallback((taskId: string, status: boolean) => {
         props.changeTaskStatus(taskId, status, props.id)
-    }, [props.changeTaskStatus, props.id])
+    }, [props])
 
     const changeTaskTitle = useCallback((taskId: string, newValue: string) => {
         props.changeTaskTitle(taskId, newValue, props.id)
-    }, [props.changeTaskTitle, props.id])
+    }, [props])
 
     return <div>
         <h3>

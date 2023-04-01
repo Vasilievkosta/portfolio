@@ -1,31 +1,26 @@
-body {
-    min-height: 100vh;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 1.3;
-    letter-spacing: 0.6px;
-    background-color: white;
-    color: black;
+
+.App {
+  padding: 30px;
+  display: flex;
 }
 
-.topics {
-    text-align: center;
+.App > div {
+  margin-right: 50px;
 }
 
-.table {
-    margin: 0 auto;
-    border: 1px solid #607d8b;
-    font-size: 24px;
-    min-width: 500px;
-    text-align: center;
+.error {
+  border: red 1px solid;
 }
 
-.table thead {
-    background-color: #b6cefc;
+.error-message {
+  color: red;
 }
 
-.table tbody {
-    background-color: #cecece;
+.active-filter {
+  background-color: aquamarine;
 }
+
+.is-done {
+  opacity: 0.5;
+}
+

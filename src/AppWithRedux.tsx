@@ -2,8 +2,10 @@ import React, { useCallback } from 'react';
 import './App.css';
 import { TaskType, Todolist } from './Todolist';
 import { AddItemForm } from './AddItemForm';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 import {
-     removeTodolistAC, addTodolistAC, changeTodolistTitleAC,
+    removeTodolistAC, addTodolistAC, changeTodolistTitleAC,
     changeTodolistFilterAC
 } from './state/todolists-reducer';
 import { removeTaskAC, addTaskAC, changeTaskStatusAC, changeTaskTitleAC } from './state/tasks-reducer';
@@ -64,8 +66,11 @@ function AppWithRedux() {
     }, [dispatch])
 
     return (
-        <div className="App">
-            <AddItemForm addItem={addTodolist} />
+        <div style={{ padding: '20px' }}>
+            <Grid container >
+				<AddItemForm addItem={addTodolist} />
+			</Grid>
+			<Grid container spacing={3}>
             {
                 todolists.map(tl => {
                     // let allTodolistTasks = tasks[tl.id];
@@ -78,23 +83,26 @@ function AppWithRedux() {
                     //     tasksForTodolist = allTodolistTasks.filter(t => t.isDone === true);
                     // }
 
-                    return <Todolist
-                        key={tl.id}
-                        id={tl.id}
-                        title={tl.title}
-                        tasks={tasks[tl.id]}
-                        removeTask={removeTask}
-                        changeFilter={changeFilter}
-                        addTask={addTask}
-                        changeTaskStatus={changeTaskStatus}
-                        filter={tl.filter}
-                        removeTodolist={removeTodolist}
-                        changeTaskTitle={changeTaskTitle}
-                        changeTodolistTitle={changeTodolistTitle}
-                    />
+                    return <Grid item key={tl.id}>
+                        <Paper style={{ padding: '10px' }}>
+							<Todolist                        
+								id={tl.id}
+								title={tl.title}
+								tasks={tasks[tl.id]}
+								removeTask={removeTask}
+								changeFilter={changeFilter}
+								addTask={addTask}
+								changeTaskStatus={changeTaskStatus}
+								filter={tl.filter}
+								removeTodolist={removeTodolist}
+								changeTaskTitle={changeTaskTitle}
+								changeTodolistTitle={changeTodolistTitle}
+							/>
+						</Paper>
+						</Grid>
                 })
             }
-
+			</Grid>
         </div>
     );
 }

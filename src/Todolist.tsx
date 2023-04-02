@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import { FilterValuesType } from './App';
+import { FilterValuesType } from './AppWithRedux';
 import { AddItemForm } from './AddItemForm';
 import { EditableSpan } from './EditableSpan';
 import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+import Delete from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 
 import { Task } from './Task'
@@ -71,7 +71,7 @@ export const Todolist = React.memo((props: PropsType) => {
 
             {/*<button onClick={removeTodolist}>x</button>*/}
             <IconButton aria-label="delete" onClick={removeTodolist}>
-                <DeleteIcon />
+                <Delete />
             </IconButton>
         </h3>
         <AddItemForm addItem={addTask} />
@@ -99,15 +99,15 @@ export const Todolist = React.memo((props: PropsType) => {
                 onClick={onCompletedClickHandler}>Completed
             </button>*/}
 
-            <Button variant={props.filter === 'all' ? "contained" : "outlined"}
-                size="small" color="secondary" onClick={onAllClickHandler}>
+            <Button variant={props.filter === 'all' ? "outlined" : "text"}
+                size="small" color="inherit" onClick={onAllClickHandler}>
                 All
             </Button>
-            <Button variant={props.filter === 'active' ? "contained" : "outlined"}
-                size="small" color="secondary" onClick={onActiveClickHandler}>
+            <Button variant={props.filter === 'active' ? "outlined" : "text"}
+                size="small" color="primary" onClick={onActiveClickHandler}>
                 Active
             </Button>
-            <Button variant={props.filter === 'completed' ? "contained" : "outlined"}
+            <Button variant={props.filter === 'completed' ? "outlined" : "text"}
                 size="small" color="secondary" onClick={onCompletedClickHandler}>
                 Completed
             </Button>

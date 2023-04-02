@@ -24,3 +24,11 @@
   opacity: 0.5;
 }
 
+.task {
+	display: flex;	
+	align-items: center;
+}
+.span {
+	margin-right: auto;
+}
+

@@ -29,7 +29,7 @@ type PropsType = {
 }
 
 export const Todolist = React.memo((props: PropsType) => {
-    
+
     let tasksAll = props.tasks;
     let tasksPaint = tasksAll;
 
@@ -70,8 +70,8 @@ export const Todolist = React.memo((props: PropsType) => {
             <EditableSpan value={props.title} onChange={changeTodolistTitle} />
 
             {/*<button onClick={removeTodolist}>x</button>*/}
-            <IconButton aria-label="delete" onClick={removeTodolist}>
-                <Delete />
+            <IconButton aria-label="delete" size="large" onClick={removeTodolist}>
+                <Delete fontSize="inherit" />
             </IconButton>
         </h3>
         <AddItemForm addItem={addTask} />

@@ -13,7 +13,7 @@ type TaskPropsType = {
 }
 
 export const Task = React.memo((props: TaskPropsType) => {
-    
+
     const onClickHandler = () => props.removeTask(props.task.id)
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -26,11 +26,11 @@ export const Task = React.memo((props: TaskPropsType) => {
 
     return <div className={props.task.isDone ? "task is-done" : "task"}>
         {/*<input type="checkbox" onChange={onChangeHandler} checked={props.task.isDone} />*/}
-        <Checkbox  onChange={onChangeHandler} checked={props.task.isDone} color="primary"/>
+        <Checkbox onChange={onChangeHandler} checked={props.task.isDone} color="primary" />
         <EditableSpan value={props.task.title} onChange={onTitleChangeHandler} />
         {/*<button onClick={onClickHandler}><span>&#10006;</span></button>*/}
-		<IconButton onClick={onClickHandler}>
-            <Delete/>
+        <IconButton aria-label="delete" size="small" onClick={onClickHandler}>
+            <Delete />
         </IconButton>
     </div>
 })
